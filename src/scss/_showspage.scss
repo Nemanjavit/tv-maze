@@ -1,0 +1,21 @@
+.pagination {
+	// background-color: red;
+	display: flex;
+	width: 80%;
+	list-style-type: none;
+	justify-content: space-evenly;
+
+	li {
+		border: 1px solid grey;
+	}
+
+	a {
+		display: block;
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	.paginationDisabled {
+		opacity: 0.8;
+	}
+}

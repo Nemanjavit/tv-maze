@@ -1,0 +1,33 @@
+.showcard {
+	padding: 10px;
+}
+.showcard__container {
+	position: relative;
+	transition: transform 2s;
+	transform-style: preserve-3d;
+	img {
+		width: 100%;
+	}
+}
+.showcard:hover .showcard__container {
+	transform: rotateY(180deg);
+}
+
+.showcard__front {
+	display: flex;
+	flex-direction: column;
+
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+}
+.showcard__back {
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	background-color: green;
+}
