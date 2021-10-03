@@ -1,2 +1,17 @@
+@import "./variables";
 @import "./showspage";
 @import "./showcard";
+@import "./nav";
+@import "./sideBar";
+@import "./homepage";
+@import "./singleShow";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: $wheat;
+	font-family: $myFont;
+}

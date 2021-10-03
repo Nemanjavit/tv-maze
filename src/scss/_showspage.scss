@@ -1,12 +1,15 @@
+.shows__page {
+	padding: 35px 0;
+}
+
 .pagination {
-	// background-color: red;
 	display: flex;
 	width: 80%;
 	list-style-type: none;
 	justify-content: space-evenly;
 
 	li {
-		border: 1px solid grey;
+		color: $darkGreen;
 	}
 
 	a {
@@ -16,6 +19,13 @@
 	}
 
 	.paginationDisabled {
-		opacity: 0.8;
+		opacity: 0.9;
+		color: #3c948b7d;
+
+		&:hover {
+			a {
+				cursor: default;
+			}
+		}
 	}
 }

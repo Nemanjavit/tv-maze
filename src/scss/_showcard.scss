@@ -1,22 +1,35 @@
 .showcard {
-	padding: 10px;
+	padding: 10px 0;
+	height: 100%;
+	font-size: 14px;
 }
 .showcard__container {
 	position: relative;
-	transition: transform 2s;
+	transition: transform 1s;
 	transform-style: preserve-3d;
-	img {
+	height: 100%;
+
+	.showcard__image {
+		border-radius: 5px;
+		width: 100%;
+	}
+	.showcard__placeholder {
+		height: 100%;
+		background-color: $navGreen;
 		width: 100%;
 	}
 }
-.showcard:hover .showcard__container {
-	transform: rotateY(180deg);
+.cardflip {
+	.showcard__container {
+		transform: rotateY(180deg);
+	}
 }
 
 .showcard__front {
+	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
-
+	height: 100%;
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
 }
@@ -28,6 +41,93 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
+	background-color: #3f3f3f;
+	color: $navGreen;
+	border-radius: 5px;
+	font-size: 12px;
 
-	background-color: green;
+	&__link {
+		position: absolute;
+		bottom: 10%;
+		left: 0;
+		border-radius: 0 5px 5px 0;
+		padding: 10px;
+		color: white;
+		text-decoration: none;
+		background-color: $navGreen;
+	}
+
+	&__body {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__name {
+		text-align: center;
+		padding: 10px 0;
+	}
+
+	&__language {
+		text-align: center;
+		padding: 10px 0;
+	}
+
+	&__icons {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		padding: 10px 0;
+
+		svg {
+			font-size: 30px;
+		}
+
+		.rating {
+			display: flex;
+			align-items: center;
+			color: $navGreen;
+			margin: 0 5px;
+		}
+		.favorites {
+			position: relative;
+			cursor: pointer;
+			margin: 0 5px;
+
+			.hiddenHeart {
+				visibility: hidden;
+			}
+			@keyframes pulse {
+				0% {
+					transform: scale(1.1);
+					opacity: 0.3;
+				}
+				50% {
+					transform: scale(1.5);
+					opacity: 0.6;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+			.emptyHeart {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 1;
+			}
+			.pulsingHeart {
+				animation: pulse ease-in-out 0.2s;
+				animation-iteration-count: 2;
+			}
+
+			svg {
+				fill: $navGreen;
+			}
+		}
+	}
 }

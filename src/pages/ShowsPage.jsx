@@ -1,53 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { getAllshows } from "../Api/Api";
-import ReactPaginate from "react-paginate";
+import React, { useContext, useEffect, useState } from "react";
 import { Col, Row } from "react-grid-system";
-import ShowCard from "../components/ShowCard";
+import { ShowContext } from "../context/GlobalState";
+import ShowList from "../components/ShowList";
+import SideBar from "../components/SideBar";
 
 const ShowsPage = () => {
-	const [allShows, setAllshows] = useState([]);
+	const [filtered, setFiltered] = useState([]);
 
-	const [pageNumber, setPageNumber] = useState(0);
-	const showsPerPage = 12;
-	const pagesVisited = pageNumber * showsPerPage;
-	const pageCount = Math.ceil(allShows.length / showsPerPage);
+	const context = useContext(ShowContext);
+	const { allShows } = context;
 
-	useEffect(() => {
-		getAllshows().then((res) => setAllshows(res.data));
-	}, []);
+	// filtering
 
-	const changePage = ({ selected }) => {
-		setPageNumber(selected);
+	const fillterShows = (inputValues) => {
+		const filters = {
+			genres: (genres) => genres.includes(inputValues.genres),
+			language: (language) => language === inputValues.language,
+			rating: (rating) => rating.average > parseInt(inputValues.rating),
+		};
+
+		const filterKeys = Object.keys(inputValues);
+		const result = allShows.filter((item) => {
+			// validates all filter criteria
+			return filterKeys.every((key) => {
+				// ignores non-function predicates
+				if (typeof filters[key] !== "function") return true;
+				return filters[key](item[key]);
+			});
+		});
+		setFiltered(result);
 	};
 
-	const display = allShows
-		.slice(pagesVisited, pagesVisited + showsPerPage)
-		.map((show) => {
-			return <ShowCard key={show.id} show={show} />;
-		});
+	// };
+	useEffect(() => {
+		setFiltered(allShows);
+	}, []);
 
 	return (
-		<Row gutterWidth={-30}>
-			{/* left side */}
-			<Col md={3} lg={2}>
-				<h3>side bar</h3>
-			</Col>
-			{/* right side */}
+		<Row gutterWidth={30} className="shows__page">
+			<SideBar fillterShows={fillterShows} />
+
 			<Col md={7} lg={10}>
-				<Row justify="center" nogutter className="shows__row">
-					{display}
-					<ReactPaginate
-						previousLabel={"Previous"}
-						nextLabel={"Next"}
-						pageCount={pageCount}
-						onPageChange={changePage}
-						containerClassName={"pagination"}
-						previousLinkClassName={"previousBttn"}
-						nextLinkClassName={"nextBttn"}
-						disabledClassName={"paginationDisabled"}
-						activeClassName={"paginationActive"}
-					/>
-				</Row>
+				<ShowList shows={filtered} />
 			</Col>
 		</Row>
 	);

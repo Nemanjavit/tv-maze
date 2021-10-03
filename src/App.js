@@ -8,18 +8,32 @@ import {
 } from "react-router-dom";
 import ShowsPage from "./pages/ShowsPage";
 import SingleShow from "./pages/SingleShow";
+import { Container } from "react-grid-system";
+import HomePage from "./pages/HomePage";
+import GlobalState from "./context/GlobalState";
+import SearchResult from "./pages/SearchResult";
 
 function App() {
 	return (
-		<BrowserRouter>
-			<div className="App">
-				<Nav />
-				<Switch>
-					<Route exact path="/" component={ShowsPage} />
-					<Route path="/singleshow" component={SingleShow} />
-				</Switch>
-			</div>
-		</BrowserRouter>
+		<GlobalState>
+			<BrowserRouter>
+				<div className="App">
+					<Nav />
+					<Container>
+						<Switch>
+							<Route exact path="/" component={HomePage} />
+							<Route path="/shows" exact component={ShowsPage} />
+							<Route path="/shows/:id" component={SingleShow} />
+							<Route
+								exact
+								path="/search/shows/:query"
+								component={SearchResult}
+							/>
+						</Switch>
+					</Container>
+				</div>
+			</BrowserRouter>
+		</GlobalState>
 	);
 }
 
