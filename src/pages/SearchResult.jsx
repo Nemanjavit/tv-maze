@@ -10,15 +10,15 @@ const SearchResult = () => {
 	let params = useParams();
 
 	useEffect(() => {
-		searchShows(params).then((res) => {
+		searchShows(params.query).then((res) => {
 			const newArr = [];
-			let newList = res.data.map((obj) => {
+			res.data.map((obj) => {
 				return newArr.push(obj.show);
 			});
 			setSearchedShows(newArr);
 		});
-	}, []);
-	console.log(searchedShows);
+	}, [params.query]);
+
 	return (
 		<Row>
 			{searchedShows.map((show) => {

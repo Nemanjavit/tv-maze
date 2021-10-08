@@ -1,11 +1,10 @@
 import React from "react";
-import { Col } from "react-grid-system";
 import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import { AiOutlineStar } from "react-icons/ai";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { MediaBlock, RectShape } from "react-placeholder/lib/placeholders";
-import ReactPlaceholder from "react-placeholder/lib";
+import { AiOutlineHeart } from "react-icons/ai";
+import { RectShape } from "react-placeholder/lib/placeholders";
+
 
 const ShowCard = ({ show }) => {
 	const [cardRotate, setCardRotate] = useState(false);

@@ -16,3 +16,50 @@
 		width: 90px;
 	}
 }
+
+.schedule {
+	&__list {
+		margin: 50px 0;
+		list-style-type: none;
+
+
+		h3 {
+			padding: 10px;
+			background-color: $lightBlack;
+			color: white;
+		}
+
+		&__item {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			width: 100%;
+
+			&__left {
+				width: 20%;
+
+				.time {
+					font-weight: 300;
+				}
+			}
+
+			&__right {
+				margin-left: 30px;
+				width: 80%;
+
+				.showName {
+					font-weight: 300;
+				}
+			}
+		}
+
+
+		&__item:nth-child(odd) {
+			background-color: #f1f1f1;
+		}
+
+		&__item:nth-child(even) {
+			background-color: #e9e9e9;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-grid-system";
 import ShowCard from "../components/ShowCard";
 import ReactPaginate from "react-paginate";
@@ -14,12 +14,13 @@ const ShowList = ({ shows }) => {
 		setPageNumber(selected);
 	};
 
+
 	const display = shows
 		.slice(pagesVisited, pagesVisited + showsPerPage)
 		.map((show) => {
 			return (
-				<Col sm={3}>
-					<ShowCard key={show.id} show={show} />
+				<Col key={show.id} sm={3}>
+					<ShowCard show={show} />
 				</Col>
 			);
 		});

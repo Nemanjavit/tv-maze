@@ -1,5 +1,35 @@
 .singleShow {
-	padding: 35px 0;
+
+	&__nav {
+		background-color: transparent;
+		padding: 35px 0;
+
+		&__link {
+			text-decoration: none;
+			padding: 10px;
+			color: $mediumGrey;
+
+			&:hover {
+				background-color: $darkGreen;
+				color: white;
+			}
+
+			&.active {
+				background-color: $lightBlack;
+				color: white;
+
+				&:hover {
+					background-color: $darkGreen;
+				}
+			}
+		}
+
+
+	}
+
+	&__img__container {
+		height: 100%;
+	}
 
 	&__cover {
 		width: 100%;
@@ -17,7 +47,7 @@
 
 	h3 {
 		font-size: 24px;
-		font-weight: 700;
+		font-weight: 800;
 		text-align: center;
 		padding: 20px 0;
 	}
@@ -35,7 +65,7 @@
 
 		&__card {
 			width: 100%;
-			margin: 30px 0;
+			margin: 15px 0;
 
 			p {
 				font-weight: 700;
@@ -45,5 +75,78 @@
 				}
 			}
 		}
+	}
+}
+
+.seasons {
+	h3 {
+		color: $darkGreen;
+		font-weight: 600;
+	}
+
+	&__table {
+		width: 100%;
+		table-layout: fixed;
+		text-align: center;
+		background-color: whitesmoke;
+
+
+		td {
+			padding: 5px;
+
+		}
+
+		tr:nth-child(even) {
+			background-color: whitesmoke;
+		}
+
+		tr:nth-child(odd) {
+			background-color: $mediumGrey;
+			color: whitesmoke;
+		}
+
+
+		tr:hover {
+			opacity: 0.9;
+		}
+	}
+
+	&__header {
+		text-align: center;
+		color: white;
+
+		th {
+			background-color: $darkGreen;
+			padding: 10px 5px;
+		}
+	}
+
+	&__header :first-child {
+		width: 10%;
+	}
+}
+
+.cast {
+	&__row {
+		padding: 10px 0;
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	&__placeHolder {
+		min-height: 158px;
+		background-color: $mediumGrey;
+	}
+
+	&__name,
+	&__character {
+		color: $lightBlack;
+		font-weight: 600;
+	}
+
+	&__as {
+		font-weight: 300;
 	}
 }

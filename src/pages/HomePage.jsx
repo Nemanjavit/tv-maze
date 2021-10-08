@@ -20,21 +20,17 @@ const HomePage = () => {
 		hour12: false,
 	});
 
-	const filter = () => {
-		let newList = schedule.filter((obj) => obj.airtime > time);
-		// console.log("time", time);
-		// console.log("newlist", newList);
-	};
 
-	console.log("schedule", schedule);
+
 
 	useEffect(() => {
 		getSchedule(date).then((res) => {
 			setSchedule(res.data);
-		});
-	}, []);
 
-	let mostPopular = allShows.filter((show) => show.weight == 100);
+		});
+	}, [date]);
+
+	let mostPopular = allShows.filter((show) => show.weight === 100);
 	mostPopular.length = 6;
 
 	let showsToday = [...schedule];
@@ -79,7 +75,7 @@ const HomePage = () => {
 			</Col>
 
 			<Col sm={4}>
-				<ScheduleList />
+				<ScheduleList schedule={schedule} />
 			</Col>
 		</Row>
 	);

@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
 import { Container, Row } from "react-grid-system";
-import { NavLink, useHistory, Redirect } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
-import { ShowContext } from "../context/GlobalState";
+
 
 const Nav = () => {
 	const [search, setSearch] = useState("");

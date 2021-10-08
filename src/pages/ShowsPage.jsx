@@ -34,7 +34,7 @@ const ShowsPage = () => {
 	// };
 	useEffect(() => {
 		setFiltered(allShows);
-	}, []);
+	}, [allShows]);
 
 	return (
 		<Row gutterWidth={30} className="shows__page">

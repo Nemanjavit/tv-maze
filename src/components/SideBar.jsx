@@ -19,7 +19,7 @@ const SideBar = ({ fillterShows }) => {
 
 	const setFillters = (e) => {
 		e.preventDefault();
-		Object.keys(filters).forEach((k) => filters[k] == "" && delete filters[k]);
+		Object.keys(filters).forEach((k) => filters[k] === "" && delete filters[k]);
 		fillterShows(filters);
 	};
 

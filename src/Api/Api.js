@@ -25,6 +25,6 @@ export const searchShows = async (query) => {
 
 export const getSingleShow = async (id) => {
 	return await resolve(
-		axios.get(`https://api.tvmaze.com/shows/${id}`).then((res) => res.data)
+		axios.get(`https://api.tvmaze.com/shows/${id}?embed[]=episodes&embed[]=cast&embed[]=seasons`).then((res) => res.data)
 	);
 };
