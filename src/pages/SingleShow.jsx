@@ -40,27 +40,27 @@ const SingleShow = ({ match }) => {
 
 	return (
 		<div className="singleShow">
-			<Router>
-				<div className="singleShow__nav">
-					<NavLink className="singleShow__nav__link" exact to={`${url}`}>Main</NavLink>
-					<NavLink className="singleShow__nav__link" exact to={`${url}/episodes`}>Eisodes</NavLink>
-					<NavLink className="singleShow__nav__link" exact to={`${url}/cast`}>Cast</NavLink>
-				</div>
 
-				<Switch>
-					<Route path={`${path}/episodes`} exact render={(props) => (
-						<SingleShowEpisodes {...props} episodes={episodes} seasons={seasons} />
-					)} />
-					<Route path={`${path}/cast`} exact render={(props) => (
-						<SingleShowCast {...props} cast={cast} />
-					)} />
+			<div className="singleShow__nav">
+				<NavLink className="singleShow__nav__link" exact to={`${url}`}>Main</NavLink>
+				<NavLink className="singleShow__nav__link" exact to={`${url}/episodes`}>Eisodes</NavLink>
+				<NavLink className="singleShow__nav__link" exact to={`${url}/cast`}>Cast</NavLink>
+			</div>
 
-					<Route path={`${path}`} render={(props) =>
-						<SingleShowMain {...props} show={show} />
-					} />
+			<Switch>
+				<Route path={`${path}/episodes`} exact render={(props) => (
+					<SingleShowEpisodes {...props} episodes={episodes} seasons={seasons} />
+				)} />
+				<Route path={`${path}/cast`} exact render={(props) => (
+					<SingleShowCast {...props} cast={cast} />
+				)} />
 
-				</Switch>
-			</Router>
+				<Route path={`${path}`} exact render={(props) =>
+					<SingleShowMain {...props} show={show} />
+				} />
+
+			</Switch>
+
 		</div>
 	);
 };

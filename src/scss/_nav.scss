@@ -2,9 +2,11 @@ nav {
 	background-color: $lightBlack;
 	color: white;
 }
+
 .top__nav {
 	padding: 20px 0;
 }
+
 .nav__form {
 	display: block;
 	margin: 0 auto;
@@ -42,6 +44,10 @@ nav {
 		text-decoration: none;
 		padding: 10px;
 		color: white;
+
+		&__heart {
+			color: red;
+		}
 
 		&:hover {
 			background-color: $lightBlack;

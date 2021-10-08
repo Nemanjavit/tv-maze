@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Container, Row } from "react-grid-system";
 import { NavLink, useHistory } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
@@ -40,6 +40,9 @@ const Nav = () => {
 					</NavLink>
 					<NavLink className="site__nav__link" to="/shows">
 						Shows
+					</NavLink>
+					<NavLink className="site__nav__link" to="/favorites">
+						Favorites
 					</NavLink>
 				</Container>
 			</div>

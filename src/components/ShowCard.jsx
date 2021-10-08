@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import { AiOutlineStar } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RectShape } from "react-placeholder/lib/placeholders";
+import { ShowContext } from "../context/GlobalState";
 
 
 const ShowCard = ({ show }) => {
 	const [cardRotate, setCardRotate] = useState(false);
 	const [pulsing, setPulsing] = useState(false);
+	const context = useContext(ShowContext);
+	const { favorites, setFavorites } = context;
 
 	const cardFlip = () => {
 		setCardRotate(!cardRotate);
 	};
 
-	const addToFavorites = (e) => {
+	console.log('favorites', favorites);
+
+	const addToFavorites = (e, show) => {
 		e.stopPropagation();
+		if (favorites.some(favorite => favorite.id === show.id)) {
+			let newList = favorites.filter(favorites => favorites.id !== show.id)
+			setFavorites(newList)
+		} else {
+			setFavorites([...favorites, show])
+		}
+
 		setPulsing(!pulsing);
 	};
 
@@ -42,7 +53,7 @@ const ShowCard = ({ show }) => {
 								<AiOutlineStar />
 								<span> {show.rating.average}</span>
 							</div>
-							<div onClick={(e) => addToFavorites(e)} className="favorites">
+							<div onClick={(e) => addToFavorites(e, show)} className="favorites">
 								<AiOutlineHeart className="hiddenHeart" />
 
 								<AiOutlineHeart

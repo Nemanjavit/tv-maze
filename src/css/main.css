@@ -275,6 +275,10 @@ nav {
   color: white;
 }
 
+.site__nav__link__heart {
+  color: red;
+}
+
 .site__nav__link:hover {
   background-color: #3f3f3f;
   opacity: 0.95;

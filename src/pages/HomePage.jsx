@@ -47,7 +47,7 @@ const HomePage = () => {
 				<Row gutterWidth={10}>
 					{mostPopular.map((show) => {
 						return (
-							<Col key={show.id} xs={6} sm={6} md={4} lg={4}>
+							<Col key={show.id} xs={6} sm={6} md={6} lg={4} xl={2}>
 								<ShowCard show={show} />
 							</Col>
 						);
@@ -60,7 +60,8 @@ const HomePage = () => {
 				<Row gutterWidth={10}>
 					{showsToday.map((item) => {
 						return (
-							<Col key={item.id} xs={6} sm={6} md={4} lg={4}>
+
+							<Col key={item.id} xs={6} sm={6} md={6} lg={4}>
 								<ShowCard show={item.show} />
 							</Col>
 						);

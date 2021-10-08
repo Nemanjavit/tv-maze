@@ -5,6 +5,10 @@ export const ShowContext = React.createContext();
 
 const GlobalState = (props) => {
 	const [allShows, setAllshows] = useState([]);
+	const [favorites, setFavorites] = useState([])
+
+
+
 	useEffect(() => {
 		getAllshows().then((res) => {
 			setAllshows(res.data);
@@ -12,7 +16,7 @@ const GlobalState = (props) => {
 	}, []);
 
 	return (
-		<ShowContext.Provider value={{ allShows }}>
+		<ShowContext.Provider value={{ allShows, favorites, setFavorites }}>
 			{props.children}
 		</ShowContext.Provider>
 	);

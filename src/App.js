@@ -16,7 +16,7 @@ import SearchResult from "./pages/SearchResult";
 function App() {
 	return (
 		<GlobalState>
-			<BrowserRouter basename={process.env.PUBLIC_URL}>
+			<Router basename={process.env.PUBLIC_URL}>
 				<div className="App">
 					<Nav />
 					<Container>
@@ -32,7 +32,7 @@ function App() {
 						</Switch>
 					</Container>
 				</div>
-			</BrowserRouter>
+			</Router>
 		</GlobalState>
 	);
 }
