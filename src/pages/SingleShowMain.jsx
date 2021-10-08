@@ -8,7 +8,7 @@ const SingleShowMain = ({ show }) => {
 	return (
 		<Row>
 
-			<Col lg={3}>
+			<Col sm={6} md={6} lg={3}>
 				<div className="img__container">
 					{show.image ?
 						<img
@@ -19,7 +19,7 @@ const SingleShowMain = ({ show }) => {
 						<RectShape className="showcard__placeholder" />}
 				</div>
 			</Col>
-			<Col lg={6} className="singleShow__info">
+			<Col sm={6} md={6} lg={6} className="singleShow__info">
 				<h3>{show.name}</h3>
 				<div>
 					{show.genres.map((genre, i) => {

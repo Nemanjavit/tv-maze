@@ -10,10 +10,10 @@ const SingleShowCast = ({ cast }) => {
 			{
 				cast.map(item => {
 					return (
-						<Col key={item.person.id} lg={6}>
+						<Col key={item.person.id} xs={6} lg={6}>
 
 							<Row className="cast__row" align="center" >
-								<Col lg={3}>
+								<Col xs={6} lg={4}>
 									{
 										item.character.image ?
 											(<img alt="actor's face" className="cast__img" src={item.character.image.medium} />)
@@ -21,7 +21,7 @@ const SingleShowCast = ({ cast }) => {
 									}
 
 								</Col>
-								<Col lg={8}>
+								<Col xs={6} lg={8}>
 									<p className="cast__character">{item.character.name}</p>
 									<p className="cast__as">as</p>
 									<p className="cast__name">{item.person.name}</p>

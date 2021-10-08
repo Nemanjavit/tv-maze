@@ -16,7 +16,7 @@ import SearchResult from "./pages/SearchResult";
 function App() {
 	return (
 		<GlobalState>
-			<BrowserRouter>
+			<BrowserRouter basename={process.env.PUBLIC_URL}>
 				<div className="App">
 					<Nav />
 					<Container>

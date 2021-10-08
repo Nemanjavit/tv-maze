@@ -42,12 +42,12 @@ const HomePage = () => {
 
 	return (
 		<Row gutterWidth={30} className="homePage">
-			<Col sm={8}>
+			<Col xs={12} sm={12} md={6} lg={8} >
 				<h3>Most poular shows</h3>
 				<Row gutterWidth={10}>
 					{mostPopular.map((show) => {
 						return (
-							<Col key={show.id} sm={2}>
+							<Col key={show.id} xs={6} sm={6} md={4} lg={4}>
 								<ShowCard show={show} />
 							</Col>
 						);
@@ -60,7 +60,7 @@ const HomePage = () => {
 				<Row gutterWidth={10}>
 					{showsToday.map((item) => {
 						return (
-							<Col key={item.id} sm={2}>
+							<Col key={item.id} xs={6} sm={6} md={4} lg={4}>
 								<ShowCard show={item.show} />
 							</Col>
 						);
@@ -74,7 +74,7 @@ const HomePage = () => {
 				</button>
 			</Col>
 
-			<Col sm={4}>
+			<Col xs={12} sm={12} md={6} lg={4}>
 				<ScheduleList schedule={schedule} />
 			</Col>
 		</Row>

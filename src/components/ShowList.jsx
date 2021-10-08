@@ -19,7 +19,7 @@ const ShowList = ({ shows }) => {
 		.slice(pagesVisited, pagesVisited + showsPerPage)
 		.map((show) => {
 			return (
-				<Col key={show.id} sm={3}>
+				<Col key={show.id} sm={6} md={4} lg={3}>
 					<ShowCard show={show} />
 				</Col>
 			);

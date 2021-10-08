@@ -293,7 +293,6 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 1000px;
 }
 
 .sideBar__form__group {
@@ -393,6 +392,10 @@ nav {
 
 .schedule__list__item:nth-child(even) {
   background-color: #e9e9e9;
+}
+
+.singleShow {
+  width: 100%;
 }
 
 .singleShow__nav {

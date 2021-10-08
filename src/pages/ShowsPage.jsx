@@ -38,9 +38,10 @@ const ShowsPage = () => {
 
 	return (
 		<Row gutterWidth={30} className="shows__page">
-			<SideBar fillterShows={fillterShows} />
-
-			<Col md={7} lg={10}>
+			<Col className="sideBar" md={4} lg={3}>
+				<SideBar fillterShows={fillterShows} />
+			</Col>
+			<Col xs={12} md={8} lg={9}>
 				<ShowList shows={filtered} />
 			</Col>
 		</Row>

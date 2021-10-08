@@ -24,70 +24,70 @@ const SideBar = ({ fillterShows }) => {
 	};
 
 	return (
-		<Col className="sideBar" md={3} lg={2}>
-			<form className="sideBar__form" onSubmit={setFillters}>
-				<div className="sideBar__form__group">
-					<label htmlFor="language">Language:</label>
-					<select
-						className="sideBar__form__language"
-						name="language"
-						id="language"
-						value={filters.language}
-						onChange={updateField}
-					>
-						<option disabled value=""></option>
-						{languages.map((language, i) => {
-							return (
-								<option key={i} value={language}>
-									{language}
-								</option>
-							);
-						})}
-					</select>
-				</div>
 
-				<div className="sideBar__form__group">
-					<label htmlFor="genres">Genre:</label>
-					<select
-						value={filters.genres}
-						name="genres"
-						id="genres"
-						className="sideBar__form__genres"
-						onChange={updateField}
-					>
-						<option value=""></option>
-						{genres.map((genre, i) => {
-							return (
-								<option key={i} value={genre}>
-									{genre}
-								</option>
-							);
-						})}
-					</select>
-				</div>
+		<form className="sideBar__form" onSubmit={setFillters}>
+			<div className="sideBar__form__group">
+				<label htmlFor="language">Language:</label>
+				<select
+					className="sideBar__form__language"
+					name="language"
+					id="language"
+					value={filters.language}
+					onChange={updateField}
+				>
+					<option disabled value=""></option>
+					{languages.map((language, i) => {
+						return (
+							<option key={i} value={language}>
+								{language}
+							</option>
+						);
+					})}
+				</select>
+			</div>
 
-				<div className="sideBar__form__group">
-					<label htmlFor="rating">Rating:</label>
-					<select
-						value={filters.rating}
-						name="rating"
-						id="rating"
-						className="sideBar__form__rating"
-						onChange={updateField}
-					>
-						<option value=""></option>
-						{ratings.map((rating, i) => {
-							return (
-								<option key={i} value={rating}>
-									{`${rating}+`}
-								</option>
-							);
-						})}
-					</select>
-				</div>
-				<button className="sideBar__form__submit">Filter</button>
-			</form>
-		</Col>
+			<div className="sideBar__form__group">
+				<label htmlFor="genres">Genre:</label>
+				<select
+					value={filters.genres}
+					name="genres"
+					id="genres"
+					className="sideBar__form__genres"
+					onChange={updateField}
+				>
+					<option value=""></option>
+					{genres.map((genre, i) => {
+						return (
+							<option key={i} value={genre}>
+								{genre}
+							</option>
+						);
+					})}
+				</select>
+			</div>
+
+			<div className="sideBar__form__group">
+				<label htmlFor="rating">Rating:</label>
+				<select
+					value={filters.rating}
+					name="rating"
+					id="rating"
+					className="sideBar__form__rating"
+					onChange={updateField}
+				>
+					<option value=""></option>
+					{ratings.map((rating, i) => {
+						return (
+							<option key={i} value={rating}>
+								{`${rating}+`}
+							</option>
+						);
+					})}
+				</select>
+			</div>
+			<button className="sideBar__form__submit">Filter</button>
+		</form>
+
 	);
 };
 
