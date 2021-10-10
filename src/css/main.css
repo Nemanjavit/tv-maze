@@ -241,17 +241,56 @@ nav {
   width: 50%;
 }
 
-.nav__form__input {
-  display: inline;
+.nav__form__row {
+  position: relative;
   width: 75%;
+  display: inline-block;
+}
+
+.nav__form__input {
+  display: inline-block;
+  width: 100%;
   height: 36px;
   border-radius: 36px 0 0 36px;
   border: none;
   padding-left: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
 }
 
 .nav__form__input:focus {
   outline: none;
+}
+
+.nav__form label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 0px;
+  height: 100%;
+  width: 97%;
+  right: 0px;
+}
+
+.nav__form label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+  border-bottom: 2px solid #3c948b;
+  -webkit-transform: scaleX(0.1);
+          transform: scaleX(0.1);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+  transition: transform 200ms linear, -webkit-transform 200ms linear;
+}
+
+.nav__form__input:focus + label::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .nav__form__button {
@@ -266,17 +305,12 @@ nav {
 
 .site__nav {
   background-color: #3c948b;
-  padding: 10px 0;
 }
 
 .site__nav__link {
   text-decoration: none;
   padding: 10px;
   color: white;
-}
-
-.site__nav__link__heart {
-  color: red;
 }
 
 .site__nav__link:hover {
@@ -286,6 +320,12 @@ nav {
 
 .site__nav__link.active {
   background-color: #3f3f3f;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__form {
+    width: 80%;
+  }
 }
 
 .sideBar__form {
@@ -338,6 +378,7 @@ nav {
 
 .homePage h3 {
   padding: 10px 0;
+  color: #3f3f3f;
 }
 
 .homePage__link__button {
@@ -349,6 +390,7 @@ nav {
   border-radius: 5px;
   display: block;
   width: 90px;
+  margin: 10px 0;
 }
 
 .schedule__list {
@@ -549,6 +591,56 @@ nav {
   font-weight: 300;
 }
 
+.favoritesPage {
+  padding: 35px 0;
+}
+
+.loader__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3f3f3f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loader__container svg {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  stroke-dasharray: 251;
+  /* (2PI * 40px) */
+  stroke-dashoffset: 251;
+  -webkit-animation: offsettozero 5s infinite linear;
+          animation: offsettozero 5s infinite linear;
+  fill: #3f3f3f;
+  stroke: #3c948b;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+}
+
+@-webkit-keyframes offsettozero {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes offsettozero {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -559,5 +651,13 @@ nav {
 body {
   background-color: #e0cba8;
   font-family: "Lato", sans-serif;
+}
+
+.toast__succes {
+  background-color: #e3fcef;
+}
+
+.toast__error {
+  background-color: #ffebe6;
 }
 /*# sourceMappingURL=main.css.map */

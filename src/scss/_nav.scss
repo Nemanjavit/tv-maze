@@ -11,19 +11,55 @@ nav {
 	display: block;
 	margin: 0 auto;
 	width: 50%;
+	
+
+	&__row {
+		position: relative;
+		width: 75%;
+		display: inline-block;
+	}
 
 	&__input {
-		display: inline;
-		width: 75%;
+		display: inline-block;
+		width: 100%;
 		height: 36px;
 		border-radius: 36px 0 0 36px;
 		border: none;
 		padding-left: 20px;
+		font-family: $myFont;
+		font-weight: 700;
 
 		&:focus {
 			outline: none;
 		}
 	}
+
+	label {
+		position: absolute;
+		pointer-events: none;
+		bottom: 0px;
+		height: 100%;
+		width: 97%;
+		right: 0px;
+		
+
+		&::after{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			bottom: 0px;
+			border-bottom: 2px solid $darkGreen;
+			transform: scaleX(.1);
+			transform-origin: right;
+			transition: transform 200ms linear;
+		}
+	}
+	
+	&__input:focus +label::after {
+			transform: scaleX(1);
+	}
+
 
 	&__button {
 		border-radius: 0 30px 30px 0;
@@ -38,17 +74,13 @@ nav {
 
 .site__nav {
 	background-color: $darkGreen;
-	padding: 10px 0;
+	
 
 	&__link {
 		text-decoration: none;
 		padding: 10px;
 		color: white;
-
-		&__heart {
-			color: red;
-		}
-
+		
 		&:hover {
 			background-color: $lightBlack;
 			opacity: 0.95;
@@ -57,5 +89,10 @@ nav {
 		&.active {
 			background-color: $lightBlack;
 		}
+	}
+}
+@media screen and (max-width:768px) {
+	.nav__form {
+		width: 80%;
 	}
 }

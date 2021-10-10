@@ -10,6 +10,7 @@ import {
 import SingleShowMain from "./SingleShowMain";
 import SingleShowEpisodes from "./SingleShowEpisodes";
 import SingleShowCast from "./SingleShowCast";
+import { Container } from "react-grid-system";
 
 
 
@@ -39,7 +40,7 @@ const SingleShow = ({ match }) => {
 
 
 	return (
-		<div className="singleShow">
+		<Container className="singleShow">
 
 			<div className="singleShow__nav">
 				<NavLink className="singleShow__nav__link" exact to={`${url}`}>Main</NavLink>
@@ -61,7 +62,7 @@ const SingleShow = ({ match }) => {
 
 			</Switch>
 
-		</div>
+		</Container>
 	);
 };
 

@@ -19,7 +19,7 @@ const ShowList = ({ shows }) => {
 		.slice(pagesVisited, pagesVisited + showsPerPage)
 		.map((show) => {
 			return (
-				<Col key={show.id} sm={6} md={4} lg={3}>
+				<Col key={show.id} xs={6} sm={6} md={4} lg={3}  >
 					<ShowCard show={show} />
 				</Col>
 			);
@@ -28,17 +28,20 @@ const ShowList = ({ shows }) => {
 	return (
 		<Row className="shows__row">
 			{display}
-			<ReactPaginate
-				previousLabel={"Previous"}
-				nextLabel={"Next"}
-				pageCount={pageCount}
-				onPageChange={changePage}
-				containerClassName={"pagination"}
-				previousLinkClassName={"previousBttn"}
-				nextLinkClassName={"nextBttn"}
-				disabledClassName={"paginationDisabled"}
-				activeClassName={"paginationActive"}
-			/>
+			{(shows.length < showsPerPage) ? null :
+				< ReactPaginate
+					previousLabel={"Previous"}
+					nextLabel={"Next"}
+					pageCount={pageCount}
+					onPageChange={changePage}
+					containerClassName={"pagination"}
+					previousLinkClassName={"previousBttn"}
+					nextLinkClassName={"nextBttn"}
+					disabledClassName={"paginationDisabled"}
+					activeClassName={"paginationActive"}
+				/>
+			}
+
 		</Row>
 	);
 };

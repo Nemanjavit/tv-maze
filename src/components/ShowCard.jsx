@@ -10,23 +10,17 @@ const ShowCard = ({ show }) => {
 	const [cardRotate, setCardRotate] = useState(false);
 	const [pulsing, setPulsing] = useState(false);
 	const context = useContext(ShowContext);
-	const { favorites, setFavorites } = context;
+	const { favorites, addFavorites } = context;
 
 	const cardFlip = () => {
 		setCardRotate(!cardRotate);
 	};
 
-	console.log('favorites', favorites);
 
-	const addToFavorites = (e, show) => {
+
+	const onaddToFavorites = (e, show) => {
 		e.stopPropagation();
-		if (favorites.some(favorite => favorite.id === show.id)) {
-			let newList = favorites.filter(favorites => favorites.id !== show.id)
-			setFavorites(newList)
-		} else {
-			setFavorites([...favorites, show])
-		}
-
+		addFavorites(show)
 		setPulsing(!pulsing);
 	};
 
@@ -53,7 +47,7 @@ const ShowCard = ({ show }) => {
 								<AiOutlineStar />
 								<span> {show.rating.average}</span>
 							</div>
-							<div onClick={(e) => addToFavorites(e, show)} className="favorites">
+							<div onClick={(e) => onaddToFavorites(e, show)} className="favorites">
 								<AiOutlineHeart className="hiddenHeart" />
 
 								<AiOutlineHeart

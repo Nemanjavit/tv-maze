@@ -18,15 +18,18 @@ const Nav = () => {
 	return (
 		<nav>
 			<Container>
-				<Row nogutter className="top__nav">
+				<Row nogutter align="center" className="top__nav">
 					<div className="logo">TV MAZE</div>
 					<form className="nav__form" onSubmit={onSearch}>
-						<input
-							className="nav__form__input"
-							type="text"
-							value={search}
-							onChange={(e) => setSearch(e.target.value)}
-						/>
+						<div className="nav__form__row">
+							<input
+								className="nav__form__input"
+								type="text"
+								value={search}
+								onChange={(e) => setSearch(e.target.value)}
+							/>
+							<label>	</label>
+						</div>
 						<button className="nav__form__button" type="submit">
 							<BsSearch />
 						</button>
@@ -35,15 +38,17 @@ const Nav = () => {
 			</Container>
 			<div className="site__nav">
 				<Container>
-					<NavLink className="site__nav__link" exact to="/">
-						Home
-					</NavLink>
-					<NavLink className="site__nav__link" to="/shows">
-						Shows
-					</NavLink>
-					<NavLink className="site__nav__link" to="/favorites">
-						Favorites
-					</NavLink>
+					<Row nogutter>
+						<NavLink className="site__nav__link" exact to="/">
+							Home
+						</NavLink>
+						<NavLink className="site__nav__link" to="/shows">
+							Shows
+						</NavLink>
+						<NavLink className="site__nav__link" to="/favorites">
+							Favorites
+						</NavLink>
+					</Row>
 				</Container>
 			</div>
 		</nav>

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Col, Row } from "react-grid-system";
+import { Col, Container, Row } from "react-grid-system";
 import { ShowContext } from "../context/GlobalState";
 import ShowList from "../components/ShowList";
 import SideBar from "../components/SideBar";
@@ -37,14 +37,16 @@ const ShowsPage = () => {
 	}, [allShows]);
 
 	return (
-		<Row gutterWidth={30} className="shows__page">
-			<Col className="sideBar" md={4} lg={3}>
-				<SideBar fillterShows={fillterShows} />
-			</Col>
-			<Col xs={12} md={8} lg={9}>
-				<ShowList shows={filtered} />
-			</Col>
-		</Row>
+		<Container>
+			<Row gutterWidth={30} className="shows__page">
+				<Col className="sideBar" md={4} lg={3}>
+					<SideBar fillterShows={fillterShows} />
+				</Col>
+				<Col xs={12} md={8} lg={9}>
+					<ShowList shows={filtered} />
+				</Col>
+			</Row>
+		</Container>
 	);
 };
 

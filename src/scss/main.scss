@@ -5,13 +5,25 @@
 @import "./sideBar";
 @import "./homepage";
 @import "./singleShow";
+@import './favorites';
+@import './loader';
+
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
 body {
 	background-color: $wheat;
 	font-family: $myFont;
+}
+
+.toast__succes {
+	background-color:$lightGreen ;
+}
+
+.toast__error {
+	background-color: $lightRed;
 }
