@@ -356,6 +356,7 @@ nav {
   background: whitesmoke;
   width: 100%;
   border-radius: 5px;
+  -moz-appearance: none;
 }
 
 .sideBar__form__submit {
