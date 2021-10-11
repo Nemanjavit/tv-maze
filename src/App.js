@@ -2,7 +2,6 @@ import Nav from "./components/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ShowsPage from "./pages/ShowsPage";
 import SingleShow from "./pages/SingleShow";
-import { Container } from "react-grid-system";
 import HomePage from "./pages/HomePage";
 import GlobalState from "./context/GlobalState";
 import SearchResult from "./pages/SearchResult";
@@ -12,7 +11,7 @@ import "./css/main.css";
 import FavoritesPage from "./pages/FavoritesPage";
 import { Scrollbars } from 'react-custom-scrollbars';
 
-// basename={process.env.PUBLIC_URL}
+
 function App() {
 	return (
 		<GlobalState>
