@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tv-maze/static/css/main.c1a96a85.chunk.css",
+    "main.css": "/tv-maze/static/css/main.4f516b68.chunk.css",
     "main.js": "/tv-maze/static/js/main.493b6f18.chunk.js",
     "main.js.map": "/tv-maze/static/js/main.493b6f18.chunk.js.map",
     "runtime-main.js": "/tv-maze/static/js/runtime-main.ea187981.js",
@@ -12,14 +12,14 @@
     "static/js/3.0deb33be.chunk.js.map": "/tv-maze/static/js/3.0deb33be.chunk.js.map",
     "index.html": "/tv-maze/index.html",
     "static/css/2.a253fa8c.chunk.css.map": "/tv-maze/static/css/2.a253fa8c.chunk.css.map",
-    "static/css/main.c1a96a85.chunk.css.map": "/tv-maze/static/css/main.c1a96a85.chunk.css.map",
+    "static/css/main.4f516b68.chunk.css.map": "/tv-maze/static/css/main.4f516b68.chunk.css.map",
     "static/js/2.64f8f38b.chunk.js.LICENSE.txt": "/tv-maze/static/js/2.64f8f38b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ea187981.js",
     "static/css/2.a253fa8c.chunk.css",
     "static/js/2.64f8f38b.chunk.js",
-    "static/css/main.c1a96a85.chunk.css",
+    "static/css/main.4f516b68.chunk.css",
     "static/js/main.493b6f18.chunk.js"
   ]
 }
