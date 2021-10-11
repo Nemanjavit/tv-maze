@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tv-maze/static/css/main.c1a96a85.chunk.css",
-    "main.js": "/tv-maze/static/js/main.fa973deb.chunk.js",
-    "main.js.map": "/tv-maze/static/js/main.fa973deb.chunk.js.map",
+    "main.js": "/tv-maze/static/js/main.493b6f18.chunk.js",
+    "main.js.map": "/tv-maze/static/js/main.493b6f18.chunk.js.map",
     "runtime-main.js": "/tv-maze/static/js/runtime-main.ea187981.js",
     "runtime-main.js.map": "/tv-maze/static/js/runtime-main.ea187981.js.map",
     "static/css/2.a253fa8c.chunk.css": "/tv-maze/static/css/2.a253fa8c.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.a253fa8c.chunk.css",
     "static/js/2.64f8f38b.chunk.js",
     "static/css/main.c1a96a85.chunk.css",
-    "static/js/main.fa973deb.chunk.js"
+    "static/js/main.493b6f18.chunk.js"
   ]
 }
