@@ -10,27 +10,28 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'animate.css';
 import "./css/main.css";
 import FavoritesPage from "./pages/FavoritesPage";
+import { Scrollbars } from 'react-custom-scrollbars';
 
-
+// basename={process.env.PUBLIC_URL}
 function App() {
 	return (
 		<GlobalState>
-			<Router basename={process.env.PUBLIC_URL}>
-				<div className="App">
-					<Nav />
+			<Scrollbars style={{ height: "100%", width: "100%" }} autoHide>
+				<Router basename="/tv-maze/">
+					<div className="App">
+						<Nav />
+						<Switch>
+							<Route exact path="/" component={HomePage} />
+							<Route path="/shows" exact component={ShowsPage} />
+							<Route path="/shows/:id" component={SingleShow} />
+							<Route path="/favorites" component={FavoritesPage} />
+							<Route exact path="/search/shows/:query" component={SearchResult} />
+						</Switch>
 
-					<Switch>
-						<Route exact path="/" component={HomePage} />
-						<Route path="/shows" exact component={ShowsPage} />
-						<Route path="/shows/:id" component={SingleShow} />
-						<Route path="/favorites" component={FavoritesPage} />
-						<Route exact path="/search/shows/:query" component={SearchResult} />
-					</Switch>
-
-
-				</div>
-			</Router>
-		</GlobalState>
+					</div>
+				</Router>
+			</Scrollbars>
+		</GlobalState >
 	);
 }
 

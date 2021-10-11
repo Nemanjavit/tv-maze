@@ -2,6 +2,7 @@
 	padding: 10px 0;
 	height: 100%;
 	font-size: 14px;
+	
 }
 
 .showcard__container {
@@ -9,7 +10,7 @@
 	transition: transform 1s;
 	transform-style: preserve-3d;
 	height: 100%;
-
+	overflow: visible;
 	.showcard__image {
 		border-radius: 5px;
 		width: 100%;
@@ -17,6 +18,7 @@
 
 
 }
+
 
 .showcard__placeholder {
 	height: 100%;

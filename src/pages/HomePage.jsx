@@ -7,6 +7,7 @@ import ScheduleList from "../components/ScheduleList";
 import ShowCard from "../components/ShowCard";
 import { ShowContext } from "../context/GlobalState";
 
+
 const HomePage = () => {
 	const [schedule, setSchedule] = useState([]);
 	const [showAll, setShowAll] = useState(false);
@@ -49,7 +50,6 @@ const HomePage = () => {
 			{allShows.length !== 0 ?
 				<Container>
 					<Row gutterWidth={30} className="homePage">
-
 						<Col xs={12} sm={12} md={6} lg={8} >
 							<h3>Most poular shows</h3>
 							<Row gutterWidth={10}>
@@ -87,7 +87,8 @@ const HomePage = () => {
 							<ScheduleList schedule={schedule} />
 						</Col>
 					</Row>
-				</Container> :
+				</Container>
+				:
 				<Loader />
 			}
 		</div>
